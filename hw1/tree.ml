@@ -59,7 +59,7 @@ let rec exists to_bool tree =
   | Node (_, value, left, right) ->
     match (to_bool value) with
     | true -> true
-    | false -> (exists to_bool left) && (exists to_bool right)
+    | false -> (exists to_bool left) || (exists to_bool right)
 
 let even x =
   x mod 2 = 0
